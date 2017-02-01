@@ -209,7 +209,7 @@ void hdp::run(const char * directory)
     fclose(file);
 
     if (m_hdp_param->m_split_merge_sampler)
-        printf("accepte rate: %.2lf\%\n", 100.0 * (double)acc/tot);
+        printf("accept rate: %.2lf%%\n", 100.0 * (double)acc/tot);
 
 }
 
@@ -238,7 +238,7 @@ void hdp::run_test(const char * directory)
         else permute = false;
 
         m_state->iterate_gibbs_state(true, permute, m_hdp_param, TABLE_SAMPLING);
-        likelihood = m_state->joint_likelihood(m_hdp_param) - old_likelihood; 
+        likelihood = m_state->joint_likelihood(m_hdp_param) - old_likelihood;
         time(&current); dif = difftime (current,start);
         printf("#topics = %04d, #tables = %04d, likelihood = %.5f\n",
                 m_state->m_num_topics, m_state->m_total_num_tables, likelihood);

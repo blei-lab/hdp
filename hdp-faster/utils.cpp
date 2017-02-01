@@ -2,8 +2,6 @@
 
 extern gsl_rng * RANDOM_NUMBER;
 
-const double half_ln_2pi = 0.91893853320467267;
-
 /*
  * compare two ints
  * */
@@ -81,7 +79,7 @@ bool dir_exists(const char * directory)
 }
 
 /*
- * make a directory 
+ * make a directory
  */
 
 void make_directory(const char* name) {
@@ -90,7 +88,7 @@ void make_directory(const char* name) {
 
 // return log(exp(a_1)+...+exp(a_n))
 double log_normalize(vct* x) {
-  int nlen = x->size(); 
+  int nlen = x->size();
   const double log_max = 100.0; // the log(maximum in double precision), make sure it is large enough.
   int argmax;
   double max_val = vct_max(*x, &argmax); //get the maximum value in the array to avoid overflow
@@ -98,11 +96,11 @@ double log_normalize(vct* x) {
   double sum = 0.0;
   for (int i = 0; i < nlen; ++i)
     sum += exp(x->at(i) + log_shift); //shift it
- 
+
   double log_norm = log(sum) - log_shift;
   for (int i = 0; i < nlen; ++i)
     x->at(i) -= log_norm; //shift it back
- 
+
   return log_norm;
 }
 
@@ -133,7 +131,7 @@ double digamma(double x) {
 }
 
 unsigned int rmultinomial(const vct& v, double tot) {
-  if (tot < 0) tot = vct_sum(v); 
+  if (tot < 0) tot = vct_sum(v);
   double u = runiform() * tot;
   double cum_sum = 0.0;
   size_t i = 0;
@@ -190,7 +188,7 @@ gsl_rng * new_random_number_generator(long seed) {
   return random_number_generator;
 }
 
-/* 
+/*
  * free random number generator
  * */
 

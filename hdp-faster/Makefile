@@ -4,11 +4,11 @@ CC = g++ -Wall
 # CFLAGS = -g -Wall
 LDFLAGS = -lgsl -lm -lgslcblas #-latlas
 
-GSL_INCLUDE = /u/chongw/libs/gsl/include
-GSL_LIB = /u/chongw/libs/gsl/lib
+GSL_INCLUDE = /usr/local/include
+GSL_LIB = /usr/local/lib
 
-GSL_INCLUDE_MAC = /opt/local/include/
-GSL_LIB_MAC = /opt/local/lib/
+GSL_INCLUDE_MAC = $(GSL_INCLUDE) 
+GSL_LIB_MAC = $(GSL_LIB)
 
 LSOURCE = main.cpp utils.cpp stirln.cpp corpus.cpp state.cpp
 LHEADER = utils.h stirln.h corpus.h state.h
