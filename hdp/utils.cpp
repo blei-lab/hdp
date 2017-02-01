@@ -2,8 +2,6 @@
 
 extern gsl_rng * RANDOM_NUMBER;
 
-const double half_ln_2pi = 0.91893853320467267;
-
 /**
  * given log(a) and log(b), return log(a + b)
  *
@@ -125,7 +123,7 @@ double similarity(const int* v1, const int* v2, int n)
 }
 
 /// gsl_wrappers
-/* double lgamma(double x) 
+/* double lgamma(double x)
 {
     return gsl_sf_lngamma(x);
 }

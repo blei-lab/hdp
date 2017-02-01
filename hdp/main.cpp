@@ -117,7 +117,7 @@ int main(int argc, char** argv)
         printf("max_iter            = %d\n", max_iter);
         printf("save_lag            = %d\n", save_lag);
         printf("init_topics         = %d\n", init_topics);
-        printf("random_seed         = %d\n", seed);
+        printf("random_seed         = %ld\n", seed);
         printf("gamma_a             = %.2f\n", gamma_a);
         printf("gamma_b             = %.2f\n", gamma_b);
         printf("alpha_a             = %.2f\n", alpha_a);
